@@ -21,7 +21,7 @@ Principles of Software Development Process (01076034), Computer Engineering 60 a
 - This repository is software development principles and practices, including the use of software processes in actual product development: life cycle models, IDE, version control system, user requirements gathering, object-oriented software and UML, software architecture, software design and implementation, testing, and software refactoring.  
 
 ## Project Code - Directory
-- [Source code Frontend](fak-sue-frontend-main)
+- [Source code Frontend](road_trip_in_chon-frontend)
 
 or Source Code  
 - Frontend : https://github.com/Soft-dev-Deadline-man/Frontend
