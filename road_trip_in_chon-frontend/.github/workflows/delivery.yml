@@ -1,0 +1,39 @@
+name: Deploy to Self-Hosted
+
+on:
+  workflow_run:
+    workflows: ["CI for NextJS with yarn"]
+    branches: ["main"]
+    types:
+      - completed
+
+env:
+  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+  NEXT_PUBLIC_GOOGLE_MAP_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_KEY }}
+  NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
+  NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
+  NEXT_PUBLIC_BACKEND: ${{ secrets.NEXT_PUBLIC_BACKEND }}
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Copy repository
+        uses: actions/checkout@v3
+
+      - name: Create .env.local
+        run: |
+          touch .env.local
+          echo GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }} >> .env.local
+          echo GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }} >> .env.local
+          echo NEXT_PUBLIC_GOOGLE_MAP_KEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_KEY }} >> .env.local
+          echo NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} >> .env.local
+          echo NEXTAUTH_URL=${{ secrets.NEXTAUTH_URL }} >> .env.local
+          echo NEXT_PUBLIC_BACKEND=${{ secrets.NEXT_PUBLIC_BACKEND }} >> .env.local
+
+      - name: Build the docker-compose stack
+        run: docker compose up -d --build
+
+      - name: Clear all docker unused cache
+        run: docker system prune -af
