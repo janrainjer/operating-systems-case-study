@@ -40,7 +40,7 @@ or Source Code
 - Phiphusana Pingkasan
 - Phattharaphorn Chandecha
 - Phum Praisri
-- Rosarin loves Santisuk.
+- Rosarin Santisuk 
 - Worachon Chaiprasertsud
 - Woraphon Rangsi
 - Sitthi Thiancharoenchai
