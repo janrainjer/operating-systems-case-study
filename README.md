@@ -18,7 +18,7 @@
 # Software Development Process - Project
 Principles of Software Development Process (01076034), Computer Engineering 60 at KMITL.
 
-- This repository is software development principles and practices, including, **User** **Requirements**, and **UML** and is also a part of **Roadtrip** **in** **Chon's** **project** **is** **a** **web** **application** **for** **Travelling**.
+- This repository is software development principles and practices, including, **User** **Requirements**, and **UML** and is also a part of **Roadtrip** **in** **Chon's** **project** **is** **a** **Web** **Application** **for** **Travelling**.
 
 ## Code 
 - [Source code Frontend](road_trip_in_chon-frontend) [NestJs + Typescript + JWT]
