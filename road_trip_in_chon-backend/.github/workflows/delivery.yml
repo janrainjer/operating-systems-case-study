@@ -1,0 +1,42 @@
+name: Deploy to Self-Hosted
+
+on:
+  workflow_run:
+    workflows: ['CI for NestJS with pnpm']
+    branches: ['main']
+    types:
+      - completed
+
+env:
+  APP_PORT: ${{ secrets.APP_PORT }}
+  APP_IP: ${{ secrets.APP_IP }}
+  MINIO_ACCESS_KEY: ${{ secrets.MINIO_ACCESS_KEY }}
+  MINIO_BUCKET_NAME: ${{ secrets.MINIO_BUCKET_NAME }}
+  MINIO_ENDPOINT: ${{ secrets.MINIO_ENDPOINT }}
+  MINIO_PORT: ${{ secrets.MINIO_PORT }}
+  MINIO_ROOT_PASSWORD: ${{ secrets.MINIO_ROOT_PASSWORD }}
+  MINIO_ROOT_USER: ${{ secrets.MINIO_ROOT_USER}}
+  MINIO_SECRET_KEY: ${{ secrets.MINIO_SECRET_KEY }}
+  MINIO_USE_SSL: ${{ secrets.MINIO_USE_SSL }}
+  MONGODB_INITDB_ROOT_PASSWORD: ${{ secrets.MONGODB_INITDB_ROOT_PASSWORD }}
+  MONGODB_INITDB_ROOT_USERNAME: ${{ secrets.MONGODB_INITDB_ROOT_USERNAME}}
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+  JWT_SECRET: ${{ secrets.JWT_SECRET }}
+  BCRYPT_SALT_ROUND: ${{ secrets.BCRYPT_SALT_ROUND }}
+  DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: self-hosted
+    steps:
+      - name: Copy repository
+        uses: actions/checkout@v3
+
+      - name: Build the docker-compose stack
+        run: docker compose up -d --build
+
+      - name: Clear all docker unused cache
+        run: docker system prune -af

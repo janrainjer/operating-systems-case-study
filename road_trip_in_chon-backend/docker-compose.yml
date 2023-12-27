@@ -1,0 +1,69 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - minio
+    environment:
+      - APP_PORT
+      - MONGO_URI
+      - MINIO_ENDPOINT
+      - MINIO_PORT
+      - MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY
+      - MINIO_USE_SSL
+      - MINIO_BUCKET_NAME
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET
+      - JWT_SECRET
+      - BCRYPT_SALT_ROUND
+      - DOMAIN_NAME
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    networks:
+      - network-frontend
+      - network-backend
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: unless-stopped
+    volumes:
+      - ~/mongo/data:/data/db
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME
+      - MONGODB_INITDB_ROOT_PASSWORD
+    ports:
+      - 27017:27017
+    networks:
+      - network-backend
+
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    restart: unless-stopped
+    ports:
+      - '9000:9000'
+      - '9090:9090'
+    volumes:
+      - ~/minio/data:/data
+    environment:
+      - MINIO_ROOT_USER
+      - MINIO_ROOT_PASSWORD
+    networks:
+      - network-frontend
+      - network-backend
+    command: server /data --console-address ":9090"
+
+networks:
+  network-frontend:
+    name: network-frontend
+    driver: bridge
+  network-backend:
+    name: network-backend
+    driver: bridge
