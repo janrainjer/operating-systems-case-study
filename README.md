@@ -18,10 +18,10 @@
 # Software Development Process - Project
 Principles of Software Development Process (01076034), Computer Engineering 60 at KMITL.
 
-- This repository is software development principles and practices, including the use of software processes in actual product development: life cycle models, IDE, version control system, user requirements gathering, object-oriented software and UML, software architecture, software design and implementation, testing, and software refactoring.  
+- This repository is software development principles and practices, including the use of software processes in actual product development: life cycle models, IDE, version control system, user requirements gathering, **object-oriented** **software** and **UML**, **software** **architecture**, **software** **design** and implementation, testing, and software refactoring. And part of **the** **ROAD** **TRIP** **IN** **CHON** **project** **is** **a** **web** **application** **using** **Nextjs**, **TypeScript** **and** **AXIOS**.
 
 ## Project Code - Directory
-- [Source code Frontend](fak-sue-frontend-main)
+- [Source code Frontend](road_trip_in_chon-frontend)
 
 or Source Code  
 - Frontend : https://github.com/Soft-dev-Deadline-man/Frontend
@@ -40,7 +40,7 @@ or Source Code
 - Phiphusana Pingkasan
 - Phattharaphorn Chandecha
 - Phum Praisri
-- Rosarin loves Santisuk.
+- Rosarin Santisuk 
 - Worachon Chaiprasertsud
 - Woraphon Rangsi
 - Sitthi Thiancharoenchai
