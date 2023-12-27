@@ -18,16 +18,17 @@
 # Software Development Process - Project
 Principles of Software Development Process (01076034), Computer Engineering 60 at KMITL.
 
-- This repository is software development principles and practices, including the use of software processes in actual product development: life cycle models, IDE, version control system, user requirements gathering, **object-oriented** **software** and **UML**, **software** **architecture**, **software** **design** and implementation, testing, and software refactoring. And part of **the** **ROAD** **TRIP** **IN** **CHON** **project** **is** **a** **web** **application** **using** **Nextjs**, **TypeScript** **and** **AXIOS**.
+- This repository is software development principles and practices, including, **User** **Requirements**, and **UML** and is also a part of **Roadtrip** **in** **Chon's** **project** **is** **a** **web** **application**.
 
-## Project Code - Directory
-- [Source code Frontend](road_trip_in_chon-frontend)
-- [Source code Backend](road_trip_in_chon-backend)
+## Code 
+- [Source code Frontend](road_trip_in_chon-frontend) [NestJs + Typescript + JWT]
+- [Source code Backend](road_trip_in_chon-backend) [NextJs + Typescript + AXIOS]
+- Database [MongoDB + MINIO]
 
-## Project Ux/Ui - Directory
+## Ux/Ui 
 - [Ux/Ui Figma](https://www.figma.com/file/ntWUg04uB9nVyiS79mRgiR/Road-trip-in-CHON?type=design&node-id=0%3A1&mode=design&t=BFxWqyzK5yx1pJyI-1)
 
-## Project Diagram - Directory
+## Diagram 
 - [BPMN](https://shorturl.asia/Uy0st)
 - [UML](https://shorturl.asia/OeRv3)
 - [ER Diagram](https://shorturl.asia/MN9yL)
