@@ -22,10 +22,7 @@ Principles of Software Development Process (01076034), Computer Engineering 60 a
 
 ## Project Code - Directory
 - [Source code Frontend](road_trip_in_chon-frontend)
-
-or Source Code  
-- Frontend : https://github.com/Soft-dev-Deadline-man/Frontend
-- Backend : https://github.com/Soft-dev-Deadline-man/Backend
+- [Source code Backend](road_trip_in_chon-backend)
 
 ## Project Ux/Ui - Directory
 - [Ux/Ui Figma](https://www.figma.com/file/ntWUg04uB9nVyiS79mRgiR/Road-trip-in-CHON?type=design&node-id=0%3A1&mode=design&t=BFxWqyzK5yx1pJyI-1)
@@ -35,13 +32,4 @@ or Source Code
 - [UML](https://shorturl.asia/OeRv3)
 - [ER Diagram](https://shorturl.asia/MN9yL)
 
-## Member Group
-- Pannawich Wachinseadhiran
-- Phiphusana Pingkasan
-- Phattharaphorn Chandecha
-- Phum Praisri
-- Rosarin Santisuk 
-- Worachon Chaiprasertsud
-- Woraphon Rangsi
-- Sitthi Thiancharoenchai
-- Pattanaphon Chaiwong
+
